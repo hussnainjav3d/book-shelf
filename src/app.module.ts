@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { User } from './users/users.model';
+import { Department, Email, Phone } from './users/other.model';
 
 @Module({
   imports: [
@@ -12,10 +13,10 @@ import { User } from './users/users.model';
       dialect: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'your_username',
-      password: 'your_password',
-      database: 'your_database_name',
-      models: [User], // Register your Sequelize models here
+      username: 'postgres',
+      password: 'postgres',
+      database: 'bookshelf',
+      models: [User, Phone, Email, Department],
       autoLoadModels: true,
       synchronize: false,
     }),

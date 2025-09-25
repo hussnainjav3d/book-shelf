@@ -1,9 +1,15 @@
 import { DataTypes } from 'sequelize';
-import { Column, Model, Table, HasMany } from 'sequelize-typescript';
+import {
+  Column,
+  Model,
+  Table,
+  HasMany,
+  ForeignKey,
+} from 'sequelize-typescript';
 import { Department, Email, Phone } from './other.model';
 
 @Table
-export class User extends Model<User> {
+export class User extends Model {
   @Column({ primaryKey: true, autoIncrement: true, type: DataTypes.UUIDV4 })
   declare id: number;
 
@@ -24,4 +30,8 @@ export class User extends Model<User> {
 
   @HasMany(() => Department)
   declare departments: Department[];
+
+  @ForeignKey(() => Department)
+  @Column({ type: DataTypes.UUIDV4 })
+  declare departmentId: string;
 }
