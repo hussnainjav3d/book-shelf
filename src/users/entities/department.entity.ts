@@ -7,7 +7,7 @@ import {
   Model,
   Table,
 } from 'sequelize-typescript';
-import { User } from './users.entity';
+import { User } from './user.entity';
 
 @Table({ tableName: 'departments' })
 export class Department extends Model<Department> {

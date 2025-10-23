@@ -6,10 +6,11 @@ import {
   HasMany,
   ForeignKey,
 } from 'sequelize-typescript';
-import { Department, Phone } from './department.entity';
-import { Email } from './emails.entity';
+import { Department } from './department.entity';
+import { Email } from './email.entity';
+import { Phone } from './phone.entity';
 
-@Table
+@Table({ tableName: 'users' })
 export class User extends Model {
   @Column({ primaryKey: true, autoIncrement: true, type: DataTypes.UUIDV4 })
   declare id: number;
