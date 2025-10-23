@@ -6,7 +6,8 @@ import {
   HasMany,
   ForeignKey,
 } from 'sequelize-typescript';
-import { Department, Email, Phone } from './other.model';
+import { Department, Phone } from './department.entity';
+import { Email } from './emails.entity';
 
 @Table
 export class User extends Model {

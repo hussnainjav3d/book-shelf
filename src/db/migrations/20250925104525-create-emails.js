@@ -39,5 +39,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
+    queryInterface.dropTable("emails");
   }
 };
